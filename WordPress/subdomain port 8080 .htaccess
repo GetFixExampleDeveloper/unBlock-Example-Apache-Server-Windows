@@ -1,8 +1,8 @@
 # Custom subdomain .htaccess port 8080 WordPress
 
+
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 8080
 RewriteCond %{REQUEST_URI} !wordpress/
 RewriteRule ^(.*)$ http://www.wordpress.wp.com:%{SERVER_PORT}/wordpress/$1 [R,L]
-
 # End custom subdomain .htaccess port 8080 WordPress
