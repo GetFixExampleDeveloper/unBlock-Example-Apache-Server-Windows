@@ -1,0 +1,9 @@
+# Custom subdomain .htaccess port 80 WordPress
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.wordpress.wp.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.wordpress.wp.com$ 
+RewriteCond %{REQUEST_URI} !wordpress/
+RewriteRule (.*) /wordpress/$1 [L]
+
+# End custom subdomain .htaccess port 80 WordPress
