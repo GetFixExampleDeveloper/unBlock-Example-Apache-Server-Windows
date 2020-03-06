@@ -1,5 +1,5 @@
 # Custom subdomain .htaccess port 8080 WordPress
-
+# WordPress Apache Server subdomain Port 8080
 
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 8080
