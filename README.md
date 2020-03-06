@@ -5,6 +5,7 @@
 ***
 ## WordPress Example subdomain port 80 .htaccess
 ```.htaccess
+RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.wordpress.wp.com
 RewriteRule ^(.*) http://www.wordpress.wp.com/PathToPageHere [P]
 ```
