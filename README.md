@@ -1,4 +1,14 @@
 ### **``unblock example``** Apache Server Windows
+
+
+
+***
+## WordPress Example subdomain port 80 .htaccess
+```.htaccess
+RewriteCond %{HTTP_HOST} ^www.wordpress.wp.com
+RewriteRule ^(.*) http://www.wordpress.wp.com/PathToPageHere [P]
+```
+
 ***
 ## WordPress subdomain port 80 .htaccess
 ```.htaccess
@@ -23,6 +33,7 @@ RewriteRule ^(.*)$ http://www.wordpress.wp.com:%{SERVER_PORT}/wordpress/$1 [R,L]
 
 # End custom subdomain .htaccess port 8080 WordPress
 ```
+
 ***
 ## WordPress SSL + subdomain .htaccess
 ```.htaccess
