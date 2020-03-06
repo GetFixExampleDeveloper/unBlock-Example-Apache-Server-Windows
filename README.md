@@ -33,7 +33,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # END HTTPS
 ```
 ***
-## WordPress SSL + subdomain + maindomain + .htaccess
+## WordPress SSL + subdomain + maindomain .htaccess
 ```.htaccess
 # Custom subdomain .htaccess SSL + WordPress
 RewriteEngine On
