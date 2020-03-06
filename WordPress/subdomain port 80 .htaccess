@@ -1,4 +1,5 @@
 # Custom subdomain .htaccess port 80 WordPress
+# WordPress Apache Server subdomain Port 80
 
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.wordpress.wp.com$ [NC,OR]
@@ -6,3 +7,15 @@ RewriteCond %{HTTP_HOST} ^www.wordpress.wp.com$
 RewriteCond %{REQUEST_URI} !wordpress/
 RewriteRule (.*) /wordpress/$1 [L]
 # End custom subdomain .htaccess port 80 WordPress
+
+##################################################################
+
+#   BEGIN HTTPS
+#
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+#
+#   END HTTPS
