@@ -1,6 +1,26 @@
 ***
 # Domain Hosting Example Server
 ***
+***
+
+
+### Apache24 New Add Good PHP 7.3
+
+```httpd.conf
+LoadModule php7_module "E:/ComposerDirectory/ComposerDirectory/PHP 7.3.5 (64-bit)/php7apache2_4.dll"
+
+PHPIniDir "E:/ComposerDirectory/ComposerDirectory/PHP 7.3.5 (64-bit)/"
+```
+
+
+# phpMyAdmin - Error - The mysqli extension & php v7.4
+```httpd.conf
+#PHPIniDir "C:/Apache24/PHP/" #PHP v7.4
+#LoadModule php7_module "C:/Apache24/PHP/php7apache2_4.dll"
+
+```
+
+***
 ## New Good httpd.conf
 ***
 
