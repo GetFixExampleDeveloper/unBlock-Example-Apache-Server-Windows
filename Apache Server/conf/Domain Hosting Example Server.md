@@ -1,8 +1,8 @@
-
-
-
-new httpd.conf
-
+***
+# Domain Hosting Example Server
+***
+## New Good httpd.conf
+***
 
 ```httpd.conf
 
@@ -36,9 +36,9 @@ new httpd.conf
 </VirtualHost>
 
 ```
-
+***
 # Old httpd.conf Error
-
+***
 
 ```httpd.conf
 #<VirtualHost *:8080>
@@ -113,3 +113,4 @@ new httpd.conf
 
 
 ```
+***
