@@ -2,6 +2,21 @@
 
 ### Apache Server httpd.conf
 
+
+```httpd.conf
+
+#PHPIniDir "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 5.6.0/"
+#LoadModule php5_module "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 5.6.0/php5apache2_4.dll"
+
+
+PHPIniDir "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 7.3.15/"
+LoadModule php7_module "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 7.3.15/php7apache2_4.dll"
+
+
+ AddType application/x-httpd-php .php 
+
+```
+***
 ```httpd.conf
 Listen 80
 
