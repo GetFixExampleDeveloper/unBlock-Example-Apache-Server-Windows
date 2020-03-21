@@ -1,7 +1,11 @@
 ### Example Apache Server 
 
+- [unBlock Windows Problem Fix Apache Server](#unblock-windows-problem-fix-apache-server)
 
-
+<!--
+- [How to Solve Port 80 Problems When Running Apache](#how-to-solve-port-80-problems-when-running-apache)
+- [How to fix Apache server error (Windows) | How to fix "Apache is not running"](#how-to-fix-apache-server-error-windows--how-to-fix-apache-is-not-running-)
+-->
 
 - [x] ``Example Apache Server (PHP) httpd.conf``
 
