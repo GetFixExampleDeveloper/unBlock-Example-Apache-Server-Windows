@@ -1,5 +1,5 @@
 ### Example Apache Server 
-
+***
  - [unBlock Windows Problem Fix Apache Server](#unblock-windows-problem-fix-apache-server)
 
 <!--
@@ -8,8 +8,9 @@
 -->
 
 ***
-
 - [x] ``Example Apache Server (PHP) httpd.conf``
+***
+
 
 ```httpd.conf
 
@@ -24,9 +25,11 @@ LoadModule php7_module "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 7.3.
  AddType application/x-httpd-php .php 
 
 ```
-***
 
+
+***
 - [x] ``Example Apache Server (Virtual Host) httpd.conf``
+***
 
 ```httpd.conf
 Listen 80
