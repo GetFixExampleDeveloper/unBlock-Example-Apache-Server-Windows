@@ -1,6 +1,9 @@
-###
+### Example Apache Server 
 
-### Apache Server httpd.conf
+
+
+
+- [x] ``Example Apache Server (PHP) httpd.conf``
 
 
 ```httpd.conf
@@ -17,6 +20,9 @@ LoadModule php7_module "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 7.3.
 
 ```
 ***
+
+- [x] ``Example Apache Server (Virtual Host) httpd.conf``
+
 ```httpd.conf
 Listen 80
 
