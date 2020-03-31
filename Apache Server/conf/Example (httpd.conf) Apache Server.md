@@ -1,6 +1,6 @@
 
-***
-## httpd.conf Virtual Host
+### httpd.conf Virtual Host
+
 ***
 ```httpd.conf
 
@@ -20,18 +20,15 @@ Listen 80
 	#SSLOptions +StdEnvVars	
     #Options Indexes FollowSymLinks MultiViews
 	
-	
     AllowOverride All
-    
-	
-	
-
+  
+  
 </Directory>
 
 <IfModule dir_module>
     
-	DirectoryIndex index.php index.html index.shtml
-    DirectoryIndex HomeServer.html	
+    DirectoryIndex HomeServer.html
+    DirectoryIndex index.php index.html index.shtml
   # DirectoryIndex
   # DirectoryIndex
   # DirectoryIndex public install installer
@@ -66,16 +63,37 @@ ErrorDocument 403 /403.html
 #</VirtualHost>
 
 <VirtualHost *:80>
-	ServerName SampleMTDBNew.com
 
-	ServerAlias SampleMTDBNew.com
-    ServerAdmin admin@localhost
-
-    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb"	
-	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb">
+    ServerName www.SampleEmailAddresses.net
+    ServerAlias www.SampleEmailAddresses.net
+    ServerAdmin admin@SampleEmailAddresses.net
+    
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/SampleEmailAddresses.net"	
+      <Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/SampleEmailAddresses.net">
         
-	#SSLOptions +StdEnvVars	
-    #Options Indexes FollowSymLinks MultiViews
+    Options Indexes FollowSymLinks MultiViews
+	
+    AllowOverride All
+
+
+</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+
+   #ServerName SampleMTDBNew.com
+   #ServerAlias SampleMTDBNew.com
+   #ServerAdmin admin@localhost
+
+    ServerName www.Sample-MTDB.Ultimate.com
+    ServerAlias www.Sample-MTDB.Ultimate.com
+    ServerAdmin admin@Sample-MTDB.Ultimate.com
+    
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb"	
+      <Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb">
+        
+    Options Indexes FollowSymLinks MultiViews
 	
     AllowOverride All
 
