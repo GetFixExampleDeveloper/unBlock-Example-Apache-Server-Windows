@@ -1,6 +1,155 @@
 
-#### C:\Windows\System32\drivers\etc\hosts
+***
+## httpd.conf Virtual Host
+***
+```httpd.conf
 
+Listen 80
+
+<VirtualHost *:80>
+	ServerName localhost
+
+	ServerAlias localhost
+    ServerAdmin admin@localhost
+
+    #localhost
+	
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/"	
+	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/">
+ 
+	#SSLOptions +StdEnvVars	
+    #Options Indexes FollowSymLinks MultiViews
+	
+	
+    AllowOverride All
+    
+	
+	
+
+</Directory>
+
+<IfModule dir_module>
+    
+	DirectoryIndex index.php index.html index.shtml
+    DirectoryIndex HomeServer.html	
+  # DirectoryIndex
+  # DirectoryIndex
+  # DirectoryIndex public install installer
+
+</IfModule>
+
+ErrorDocument 500 /500.html
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+
+</VirtualHost>
+
+
+#<VirtualHost *:8000>
+
+#	ServerName HomePremiumSampleTube.server.tv
+#	ServerAlias HomePremiumSampleTube.server.tv
+#   ServerAdmin admin@HomePremiumSampleTube.server.tv
+
+		
+#    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSampleTube/"	
+#	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSampleTube/">
+        
+#	SSLOptions +StdEnvVars
+	
+#    Options Indexes FollowSymLinks MultiViews
+#    AllowOverride All
+
+
+#</Directory>
+#</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName SampleMTDBNew.com
+
+	ServerAlias SampleMTDBNew.com
+    ServerAdmin admin@localhost
+
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb"	
+	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb">
+        
+	#SSLOptions +StdEnvVars	
+    #Options Indexes FollowSymLinks MultiViews
+	
+    AllowOverride All
+
+
+</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	
+	ServerName HomePremiumSample.com
+
+	ServerAlias HomePremiumSample.com
+    ServerAdmin admin@HomePremiumSample.com
+	
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSample"	
+	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSample">
+        
+	#SSLOptions +StdEnvVars	
+    #Options Indexes FollowSymLinks MultiViews
+	
+    AllowOverride All
+
+</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName HomePremiumSampleTube.server.tv
+
+	ServerAlias HomePremiumSampleTube.server.tv
+    ServerAdmin admin@HomePremiumSampleTube.server.tv
+
+		
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSampleTube"	
+	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSampleTube">
+        
+	#SSLOptions +StdEnvVars	
+    #Options Indexes FollowSymLinks MultiViews
+	
+    AllowOverride All
+
+
+</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+    ServerAdmin root@localhost
+    ServerAlias SamplePhpMyAdmin.com
+
+	ServerName SamplePhpMyAdmin.com
+    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/phpMyAdmin"
+
+    
+	#UseCanonicalName Off
+  	
+   	 # SSLCertificateFile "C:/Users/Credit/Documents/#Server(htdocs)(www)/SSL/crt/SamplePhpMyAdmin.com.crt"
+	 # SSLCertificateKeyFile "C:/Users/Credit/Documents/#Server(htdocs)(www)/SSL/key/SamplePhpMyAdmin.com.key"
+	
+	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/phpMyAdmin">
+    	
+	#SSLOptions +StdEnvVars	
+    #Options Indexes FollowSymLinks MultiViews
+	
+    AllowOverride All
+	
+	
+</Directory>
+</VirtualHost>
+
+```
+***
+#### C:\Windows\System32\drivers\etc\hosts
+***
 ```hosts
 # Copyright (c) 1993-2009 Microsoft Corp.
 #
@@ -47,9 +196,5 @@
 127.0.0.1       www.ExampleServerRoot.com
 127.0.0.1       www.DomainHosting.Manager.com
 127.0.0.1       www.ServerSourceAddress.com
-
-```
-
-```httpd.conf
 
 ```
