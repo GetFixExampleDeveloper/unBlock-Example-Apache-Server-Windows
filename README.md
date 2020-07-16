@@ -1,6 +1,82 @@
 ### Example Apache Server 
-***
+**************************
  - [unBlock Windows Problem Fix Apache Server](#unblock-windows-problem-fix-apache-server)
+*********************************************************************************************
+#### (Microsoft Windows 8.1 Pro) bit-x64 **``C:\Windows\System32\drivers\etc\hosts``**
+```hosts
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows provided by MajorGeeks.Com
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+# Home Sample
+127.0.0.1       SamplePhpMyAdmin.com
+127.0.0.1       SampleDirectoryServersNetwork.com
+
+# Home Example
+127.0.0.1       SampleAllServersNetwork.WordPress.com
+127.0.0.1       SampleAllServersNetwork.com
+127.0.0.1       SampleAdminServersNetwork.WordPress.com
+127.0.0.1       SampleAdminServersNetwork.com
+
+# Home Premium
+127.0.0.1       www.HomePremiumSampleTube.Home.com
+127.0.0.1       www.HomePremiumSampleServer.Home.com
+
+# Home Manager
+127.0.0.1       www.ManagerServer.com
+127.0.0.1       www.ExampleServerRoot.com
+127.0.0.1       www.DomainHosting.Manager.com
+127.0.0.1       www.ServerSourceAddress.com
+
+```
+#### **``C:\Apache24\conf\``**
+#### ****````WordPress.conf````****
+```WordPress.conf
+<VirtualHost *:80>
+ServerName SampleAllServersNetwork.WordPress.com
+ServerAdmin AdminMail@SampleAllServersNetwork.WordPress.Default.com
+DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/WordPress/Home"
+<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/WordPress/Home">
+# BEGIN WordPress 
+ RewriteEngine On  
+ RewriteBase /
+ RewriteRule ^index\.php$ - [L]
+ 
+# uploaded files
+ RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
+
+# add a trailing slash to /wp-admin
+ RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+ RewriteCond %{REQUEST_FILENAME} -f [OR]
+ RewriteCond %{REQUEST_FILENAME} -d
+ RewriteRule ^ - [L]
+ RewriteRule  ^[_0-9a-zA-Z-]+/(wp-(content|admin|includes).*) $1 [L]
+ RewriteRule  ^[_0-9a-zA-Z-]+/(.*\.php)$ $1 [L]
+ RewriteRule . index.php [L]
+# END WordPress
+
+AllowOverride None
+
+</Directory>
+</VirtualHost>
+```
 
 <!--
 - [How to Solve Port 80 Problems When Running Apache](#how-to-solve-port-80-problems-when-running-apache)
@@ -11,21 +87,12 @@
 - [x] ``Example Apache Server (PHP) httpd.conf``
 ***
 
-
 ```httpd.conf
-
-#PHPIniDir "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 5.6.0/"
-#LoadModule php5_module "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 5.6.0/php5apache2_4.dll"
-
-
 PHPIniDir "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 7.3.15/"
 LoadModule php7_module "E:/ComposerDirectory/ComposerDirectory/PHP/(64-bit) 7.3.15/php7apache2_4.dll"
 
-
- AddType application/x-httpd-php .php 
-
+AddType application/x-httpd-php .php
 ```
-
 
 ***
 - [x] ``Example Apache Server (Virtual Host) httpd.conf``
@@ -52,13 +119,12 @@ Listen 80
 
 ErrorDocument 500 /500.html
 ErrorDocument 404 /404.html
-ErrorDocument 403 /403.html
 
 </VirtualHost>
 
 
-#Listen 8000
 
+#Listen 8000
 #<VirtualHost *:8000>
 
 #	ServerName HomePremiumSampleTube.server.tv
@@ -77,10 +143,8 @@ ErrorDocument 403 /403.html
 
 #</Directory>
 
-
 #ErrorDocument 500 /500.html
 #ErrorDocument 404 /404.html
-#ErrorDocument 403 /403.html
 
 
 #</VirtualHost>
@@ -106,17 +170,13 @@ ErrorDocument 403 /403.html
 
 ErrorDocument 500 /500.html
 ErrorDocument 404 /404.html
-ErrorDocument 403 /403.html
-
 
 </VirtualHost>
 
-
 <VirtualHost *:80>
-	ServerName HomePremiumSampleTube.server.tv
-
-	ServerAlias HomePremiumSampleTube.server.tv
-    ServerAdmin admin@HomePremiumSampleTube.server.tv
+ServerName HomePremiumSampleTube.server.tv
+ServerAlias HomePremiumSampleTube.server.tv
+ServerAdmin admin@HomePremiumSampleTube.server.tv
 
 		
     DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/HomePremiumSampleTube"	
@@ -133,18 +193,16 @@ ErrorDocument 403 /403.html
 
 ErrorDocument 500 /500.html
 ErrorDocument 404 /404.html
-ErrorDocument 403 /403.html
 
 
 </VirtualHost>
 
 
-
 <VirtualHost *:80>
-	ServerName SampleMTDBNew.com
+ServerName SampleMTDBNew.com
 
-	ServerAlias SampleMTDBNew.com
-    ServerAdmin admin@localhost
+ServerAlias SampleMTDBNew.com
+ServerAdmin admin@localhost
 
 		
     DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/mtdb"	
@@ -174,13 +232,12 @@ php_flag register_globals on
 </VirtualHost>
 
 
-
 <VirtualHost *:80>
-    ServerAdmin root@localhost
-    ServerAlias SamplePhpMyAdmin.com
+ServerAdmin root@localhost
+ServerAlias SamplePhpMyAdmin.com
 
-	ServerName SamplePhpMyAdmin.com
-    DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/phpMyAdmin"
+ServerName SamplePhpMyAdmin.com
+DocumentRoot "C:/Users/Credit/Documents/#Server(htdocs)(www)/phpMyAdmin"
 
     
 	#UseCanonicalName Off
@@ -189,10 +246,7 @@ php_flag register_globals on
 	 # SSLCertificateKeyFile "C:/Users/Credit/Documents/#Server(htdocs)(www)/SSL/key/SamplePhpMyAdmin.com.key"
 	
 	<Directory "C:/Users/Credit/Documents/#Server(htdocs)(www)/phpMyAdmin">
-    
-    
-	
-	
+
 	SSLOptions +StdEnvVars
 	
     Options Indexes FollowSymLinks MultiViews
